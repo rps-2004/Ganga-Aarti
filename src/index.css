@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────
+   Divine Ganga Aarti — Sunrise Design System
+   All colors in HSL
+───────────────────────────────────────── */
+
+@layer base {
+  :root {
+    /* Core backgrounds */
+    --background: 45 100% 98%;
+    --foreground: 20 30% 10%;
+
+    --card: 40 60% 97%;
+    --card-foreground: 20 30% 10%;
+
+    --popover: 40 60% 97%;
+    --popover-foreground: 20 30% 10%;
+
+    /* Saffron primary */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Amber secondary */
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 30% 92%;
+    --muted-foreground: 30 15% 45%;
+
+    /* Rose gold accent */
+    --accent: 350 89% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 38 40% 85%;
+    --input: 38 40% 85%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Brand palette tokens */
+    --saffron: 25 95% 53%;
+    --amber-deep: 32 95% 44%;
+    --rose-gold: 350 89% 60%;
+    --cream: 45 100% 97%;
+    --warm-dark: 20 30% 10%;
+    --warm-dark-2: 22 25% 16%;
+
+    /* Gradients */
+    --gradient-sunrise: linear-gradient(135deg, hsl(25 95% 53%), hsl(350 89% 60%));
+    --gradient-warm: linear-gradient(180deg, hsl(38 92% 50% / 0.15), hsl(25 95% 53% / 0.05));
+    --gradient-hero: linear-gradient(to bottom, hsl(20 30% 5% / 0.35) 0%, hsl(20 30% 5% / 0.65) 60%, hsl(20 30% 5% / 0.85) 100%);
+
+    /* Glows */
+    --glow-saffron: 0 0 20px hsl(25 95% 53% / 0.4), 0 0 40px hsl(25 95% 53% / 0.2);
+    --glow-amber: 0 0 20px hsl(32 95% 44% / 0.4), 0 0 40px hsl(32 95% 44% / 0.15);
+    --shadow-warm: 0 8px 32px hsl(25 95% 53% / 0.18);
+
+    /* Sidebar (using warm tones) */
+    --sidebar-background: 40 60% 97%;
+    --sidebar-foreground: 20 30% 10%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 38 40% 92%;
+    --sidebar-accent-foreground: 20 30% 10%;
+    --sidebar-border: 38 40% 85%;
+    --sidebar-ring: 25 95% 53%;
+  }
+
+  .dark {
+    --background: 20 30% 8%;
+    --foreground: 45 80% 95%;
+    --card: 20 25% 12%;
+    --card-foreground: 45 80% 95%;
+    --popover: 20 25% 12%;
+    --popover-foreground: 45 80% 95%;
+    --primary: 25 95% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 20 20% 18%;
+    --muted-foreground: 38 30% 60%;
+    --accent: 350 89% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 20% 20%;
+    --input: 20 20% 20%;
+    --ring: 25 95% 60%;
+    --sidebar-background: 20 30% 8%;
+    --sidebar-foreground: 45 80% 95%;
+    --sidebar-primary: 25 95% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 20% 18%;
+    --sidebar-accent-foreground: 45 80% 95%;
+    --sidebar-border: 20 20% 20%;
+    --sidebar-ring: 25 95% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* ─────────────── Animations ─────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-18px) scale(1.1); opacity: 1; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.9; transform: scaleY(1) scaleX(1); }
+  25% { opacity: 0.7; transform: scaleY(1.05) scaleX(0.97); }
+  50% { opacity: 1; transform: scaleY(0.95) scaleX(1.03); }
+  75% { opacity: 0.8; transform: scaleY(1.08) scaleX(0.96); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px hsl(25 95% 53% / 0.4); }
+  50% { box-shadow: 0 0 28px hsl(25 95% 53% / 0.7), 0 0 50px hsl(350 89% 60% / 0.3); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+/* ─────────────── Utility Classes ─────────────── */
+@layer utilities {
+  .font-playfair { font-family: 'Playfair Display', serif; }
+  .font-inter { font-family: 'Inter', sans-serif; }
+
+  .animate-float { animation: float 4s ease-in-out infinite; }
+  .animate-flicker { animation: flicker 2.5s ease-in-out infinite; }
+  .animate-fade-in-up { animation: fadeInUp 0.7s ease-out forwards; }
+  .animate-slide-in-left { animation: slideInLeft 0.7s ease-out forwards; }
+  .animate-slide-in-right { animation: slideInRight 0.7s ease-out forwards; }
+  .animate-pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+  .gradient-sunrise { background: var(--gradient-sunrise); }
+  .gradient-text {
+    background: var(--gradient-sunrise);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-saffron { box-shadow: var(--glow-saffron); }
+  .glow-amber { box-shadow: var(--glow-amber); }
+  .shadow-warm { box-shadow: var(--shadow-warm); }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-warm);
+    }
+  }
+
+  .input-glow {
+    @apply transition-all duration-300;
+    &:focus {
+      border-color: hsl(var(--primary));
+      box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2), 0 0 16px hsl(var(--primary) / 0.3);
+      outline: none;
+    }
+  }
+
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
