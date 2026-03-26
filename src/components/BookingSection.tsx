@@ -23,7 +23,7 @@ export default function BookingSection() {
     name: "",
     phone: "",
     email: "",
-    ritual: "",
+    rituals: [] as string[],
     message: "",
   });
   const sectionRef = useScrollReveal();
@@ -34,15 +34,31 @@ export default function BookingSection() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleRitualToggle = (ritual: string) => {
+    setForm((prev) => ({
+      ...prev,
+      rituals: prev.rituals.includes(ritual)
+        ? prev.rituals.filter((r) => r !== ritual)
+        : [...prev.rituals, ritual],
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (form.rituals.length === 0) {
+      alert("Please select at least one ritual");
+      return;
+    }
+    
     const dateStr = date ? format(date, "PPP") : "Not specified";
+    const ritualsStr = form.rituals.join(", ");
     const msg = encodeURIComponent(
       `🙏 *New Booking Request — Kashi Ganga Aarti Event*\n\n` +
       `*Name:* ${form.name}\n` +
       `*Phone:* ${form.phone}\n` +
       `*Email:* ${form.email}\n` +
-      `*Ritual:* ${form.ritual}\n` +
+      `*Rituals:* ${ritualsStr}\n` +
       `*Date:* ${dateStr}\n` +
       `*Message:* ${form.message || "—"}`
     );
@@ -139,25 +155,30 @@ export default function BookingSection() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
-                  Type of Ritual
-                </label>
-                <select
-                  name="ritual"
-                  required
-                  value={form.ritual}
-                  onChange={handleChange}
-                  className={inputClass}
-                >
-                  <option value="">Select a ritual…</option>
-                  {rituals.map((r) => (
-                    <option key={r} value={r}>
-                      {r}
-                    </option>
-                  ))}
-                </select>
+            <div>
+              <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-3">
+                Select Rituals (You can choose multiple)
+              </label>
+              <div className="space-y-2.5">
+                {rituals.map((ritual) => (
+                  <div key={ritual} className="flex items-center">
+                    <input
+                      type="checkbox"
+                      id={ritual}
+                      checked={form.rituals.includes(ritual)}
+                      onChange={() => handleRitualToggle(ritual)}
+                      className="w-4 h-4 rounded border-[hsl(var(--primary)/0.3)] bg-[hsl(var(--background))] cursor-pointer accent-[hsl(var(--primary))]"
+                    />
+                    <label
+                      htmlFor={ritual}
+                      className="ml-3 font-inter text-sm text-foreground cursor-pointer hover:text-[hsl(var(--primary))] transition-colors"
+                    >
+                      {ritual}
+                    </label>
+                  </div>
+                ))}
               </div>
+            </div>
 
               <div>
                 <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
