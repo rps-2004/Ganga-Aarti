@@ -1,4 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Download, FileText } from "lucide-react";
 
 const stats = [
   { value: "500+", label: "Sacred Ceremonies" },
@@ -79,6 +80,37 @@ export default function AboutSection() {
               </div>
               {/* Top-right decoration */}
               <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full gradient-sunrise opacity-20 blur-xl" />
+            </div>
+          </div>
+        </div>
+
+        {/* Portfolio Section */}
+        <div className="mt-20 pt-20 border-t border-[hsl(var(--primary)/0.1)]">
+          <div className="max-w-4xl mx-auto">
+            <div ref={useScrollReveal()} className="section-reveal text-center">
+              <p className="font-inter text-sm font-semibold tracking-[0.3em] uppercase text-[hsl(var(--primary))] mb-3">
+                Our Work
+              </p>
+              <h3 className="font-playfair text-3xl md:text-4xl font-bold text-foreground mb-4">
+                View Our <span className="gradient-text">Portfolio</span>
+              </h3>
+              <p className="font-inter text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto mb-8">
+                Explore our comprehensive portfolio showcasing sacred ceremonies, verified Pandits and the sacred traditions we uphold. Download to learn more about our services and commitment to authenticity.
+              </p>
+
+              <a
+                href="/portfolio.pdf"
+                download="Kashi-Ganga-Aarti-Portfolio.pdf"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-inter font-semibold text-white gradient-sunrise glow-saffron hover:scale-105 transition-transform duration-300 shadow-lg"
+              >
+                <FileText size={20} />
+                <span>Download Portfolio</span>
+                <Download size={20} />
+              </a>
+
+              <p className="font-inter text-xs text-[hsl(var(--muted-foreground))] mt-4">
+                PDF • Comprehensive guide to our services and sacred traditions
+              </p>
             </div>
           </div>
         </div>
