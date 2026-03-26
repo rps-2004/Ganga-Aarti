@@ -5,6 +5,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Helmet } from "react-helmet-async";
 
 const rituals = [
   "Ganga Aarti (Private)",
@@ -37,7 +38,7 @@ export default function BookingSection() {
     e.preventDefault();
     const dateStr = date ? format(date, "PPP") : "Not specified";
     const msg = encodeURIComponent(
-      `🙏 *New Booking Request — Divine Aarti*\n\n` +
+      `🙏 *New Booking Request — Kashi Ganga Aarti Event*\n\n` +
       `*Name:* ${form.name}\n` +
       `*Phone:* ${form.phone}\n` +
       `*Email:* ${form.email}\n` +
@@ -45,7 +46,8 @@ export default function BookingSection() {
       `*Date:* ${dateStr}\n` +
       `*Message:* ${form.message || "—"}`
     );
-    window.open(`https://wa.me/919999999999?text=${msg}`, "_blank");
+    // WhatsApp business number for booking inquiries
+    window.open(`https://wa.me/919005071425?text=${msg}`, "_blank");
   };
 
   const inputClass =
@@ -53,6 +55,27 @@ export default function BookingSection() {
 
   return (
     <section id="booking" className="py-24 bg-gradient-to-b from-[hsl(var(--muted)/0.2)] to-[hsl(var(--background))]">
+      <Helmet>
+        <title>Book Ganga Aarti — Kashi Ganga Aarti Event</title>
+        <meta name="description" content="Reserve your Ganga Aarti ceremony in Varanasi. Private and group bookings with verified Pandits." />
+        <script type="application/ld+json">{`{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Ganga Aarti Booking",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Kashi Ganga Aarti Event",
+            "telephone": "+91-9005071425",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Gangotri Vihar Colony, Lane No. 7, Nagwa",
+              "addressLocality": "Varanasi",
+              "postalCode": "221005",
+              "addressCountry": "IN"
+            }
+          }
+        }`}</script>
+      </Helmet>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center font-inter text-sm font-semibold tracking-[0.3em] uppercase text-[hsl(var(--primary))] mb-3">
           Reserve Your Ceremony

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://divineaarti.com/sitemap.xml
+Host: https://divineaarti.com

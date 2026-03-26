@@ -5,17 +5,17 @@ const contactCards = [
   {
     icon: MapPin,
     title: "Visit Us",
-    lines: ["Dashashwamedh Ghat", "Varanasi, Uttar Pradesh", "India — 221001"],
+    lines: ["Gangotri Vihar Colony, Lane No. 7", "Nagwa, near Ravidas Park", "Aasighat, Varanasi 221005"],
   },
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+91-9999999999", "Mon – Sun: 6 AM – 9 PM", "Hindi & English"],
+    lines: ["+91-9005071425", "Mon – Sun: 6 AM – 9 PM", "Hindi & English"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    lines: ["contact@divineaarti.com", "We reply within 2 hours", ""],
+    lines: ["kashi.gangaarti510@gmail.com", "We reply within 2 hours", ""],
   },
 ];
 
@@ -64,7 +64,7 @@ export default function ContactSection() {
           {/* Google Map embed */}
           <div className="rounded-2xl overflow-hidden border border-[hsl(var(--primary)/0.2)] shadow-warm" style={{ height: 380 }}>
             <iframe
-              title="Dashashwamedh Ghat, Varanasi"
+              title="Assi Ghat, Varanasi"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.1457573048086!2d83.0053!3d25.3109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2e36dc3e576b%3A0x7bd2c4e98fb15de5!2sDashashwamedh%20Ghat!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin"
               width="100%"
               height="100%"

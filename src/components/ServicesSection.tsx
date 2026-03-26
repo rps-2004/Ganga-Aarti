@@ -3,51 +3,45 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const services = [
   {
     icon: "🪔",
+    image: "/ganga_aarti.jpeg",
     title: "Ganga Aarti",
-    subtitle: "Private / Group",
+    subtitle: "Divine Fire Ceremony",
     description: "Witness the divine evening fire ceremony on the sacred banks of the Ganges with dedicated priests performing Vedic rituals.",
-    duration: "1.5 – 2 hours",
-    price: "₹2,500",
-  },
-  {
-    icon: "🔱",
-    title: "Rudrabhishek",
-    subtitle: "Sacred Shiva Puja",
-    description: "A powerful Shiva abhishekam with chanting of Shri Rudram, abhishek with milk, honey, and holy water.",
-    duration: "2 – 3 hours",
-    price: "₹3,500",
-  },
-  {
-    icon: "📿",
-    title: "Satyanarayan Katha",
-    subtitle: "Divine Blessings",
-    description: "A complete Vishnu puja and katha for prosperity, health, and divine blessings for families.",
-    duration: "3 – 4 hours",
-    price: "₹4,000",
   },
   {
     icon: "💍",
-    title: "Wedding Rituals",
-    subtitle: "Vedic Marriage",
-    description: "Complete Vedic wedding ceremonies including Saptapadi, Kanyadaan, and all sacred Hindu marriage rites.",
-    duration: "4 – 6 hours",
-    price: "₹15,000",
+    image: "/wedding.jpeg",
+    title: "Wedding Aarti",
+    subtitle: "Vedic Marriage Blessings",
+    description: "Complete Vedic wedding ceremonies including Saptapadi, Kanyadaan, and all sacred Hindu marriage rites with divine blessings.",
+  },
+  {
+    icon: "🔱",
+    image: "/rudra_abhishek.jpeg",
+    title: "Rudrabhishek",
+    subtitle: "Sacred Shiva Puja",
+    description: "A powerful Shiva abhishekam with chanting of Shri Rudram, abhishek with milk, honey, and holy water.",
+  },
+  {
+    icon: "📿",
+    image: "/satyanarayana_katha.jpeg",
+    title: "Satyanarayan Katha",
+    subtitle: "Divine Blessings",
+    description: "A complete Vishnu puja and katha for prosperity, health, and divine blessings for families and communities.",
   },
   {
     icon: "🏠",
+    image: "/grih_pravesh.jpeg",
     title: "Griha Pravesh",
     subtitle: "New Home Blessing",
     description: "Traditional housewarming puja to purify and bless your new home, inviting positive energies and divine protection.",
-    duration: "2 – 3 hours",
-    price: "₹3,000",
   },
   {
     icon: "🧘",
+    image: "/ritual_consultation.jpeg",
     title: "Ritual Consultation",
     subtitle: "Personalized Guidance",
     description: "One-on-one consultation with experienced Pandits for personalized puja recommendations and spiritual guidance.",
-    duration: "45 – 60 min",
-    price: "₹500",
   },
 ];
 
@@ -74,13 +68,23 @@ export default function ServicesSection() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className="card-hover bg-[hsl(var(--card))] border border-[hsl(var(--primary)/0.18)] rounded-2xl p-6 flex flex-col group"
+              className="card-hover bg-[hsl(var(--card))] border border-[hsl(var(--primary)/0.18)] rounded-2xl p-6 flex flex-col group overflow-hidden"
               style={{ transitionDelay: `${i * 0.06}s` }}
             >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-xl gradient-sunrise flex items-center justify-center text-2xl mb-4 glow-saffron group-hover:scale-110 transition-transform duration-300">
-                {service.icon}
-              </div>
+              {/* Image or Icon */}
+              {service.image ? (
+                <div className="w-full h-40 rounded-xl mb-4 overflow-hidden bg-[hsl(var(--muted)/0.5)] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-14 h-14 rounded-xl gradient-sunrise flex items-center justify-center text-2xl mb-4 glow-saffron group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+              )}
 
               {/* Title */}
               <h3 className="font-playfair text-xl font-semibold text-foreground mb-0.5">
@@ -94,16 +98,6 @@ export default function ServicesSection() {
               <p className="font-inter text-sm text-[hsl(var(--muted-foreground))] leading-relaxed flex-1 mb-4">
                 {service.description}
               </p>
-
-              {/* Meta */}
-              <div className="flex items-center justify-between mb-4 text-sm">
-                <span className="font-inter text-[hsl(var(--muted-foreground))]">
-                  ⏱ {service.duration}
-                </span>
-                <span className="font-playfair font-bold text-[hsl(var(--primary))] text-base">
-                  From {service.price}
-                </span>
-              </div>
 
               {/* CTA */}
               <a

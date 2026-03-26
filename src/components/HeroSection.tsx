@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
       aria-label="Hero"
     >
       {/* Background — placeholder slot for Ganga Aarti photo */}
@@ -62,12 +62,26 @@ export default function HeroSection() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full flex flex-col items-center">
+        {/* Sanskrit Shlok — positioned at top after navbar */}
         <p
+          className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold italic mb-4 text-[hsl(45_90%_90%)] animate-fade-in-up leading-relaxed"
+          style={{ animationDelay: "0.05s", lineHeight: "1.8" }}
+        >
+          "देवि! सुरेश्वरि! भगवति! गंगे!<br className="block mb-3" />
+          त्रिभुवनतारिणि तरलतरंगे।<br className="block mb-3" />
+          शंकरमौलिविहारिणि विमले<br className="block mb-3" />
+          मम मतिरास्तां तव पदकमले।"
+        </p>
+        
+
+        {/* Spacer for main content */}
+        <div className="flex-grow flex flex-col items-center justify-center">
+          <p
           className="font-inter text-sm font-medium tracking-[0.3em] uppercase mb-4 text-[hsl(var(--primary))] animate-fade-in-up"
           style={{ animationDelay: "0.1s" }}
         >
-          🙏 Dashashwamedh Ghat, Varanasi
+          🙏 Assi Ghat, Varanasi
         </p>
 
         <h1
@@ -102,12 +116,7 @@ export default function HeroSection() {
           >
             🪔 Book Ganga Aarti
           </button>
-          <button
-            onClick={() => handleScroll("#pandits")}
-            className="px-8 py-4 rounded-full font-inter font-semibold text-white border border-[hsl(var(--primary)/0.6)] bg-[hsl(0_0%_100%/0.08)] backdrop-blur-sm hover:bg-[hsl(var(--primary)/0.15)] hover:border-[hsl(var(--primary))] transition-all text-base"
-          >
-            🧘 Talk to a Pandit
-          </button>
+        </div>
         </div>
 
         {/* Scroll indicator */}

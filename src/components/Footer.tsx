@@ -1,7 +1,6 @@
 const quickLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Pandits", href: "#pandits" },
   { label: "Book Now", href: "#booking" },
   { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },
@@ -50,7 +49,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl animate-flicker">🪔</span>
-              <span className="font-playfair text-xl font-bold text-[hsl(var(--cream))]">Divine Aarti</span>
+              <span className="font-playfair text-xl font-bold text-[hsl(var(--cream))]">Kashi  Ganga Aarti Events</span>
             </div>
             <p className="font-inter text-sm text-[hsl(45_40%_65%)] leading-relaxed">
               Connecting devotees worldwide with authentic Vedic ceremonies on the sacred banks of the Ganges in Varanasi.
@@ -98,13 +97,13 @@ export default function Footer() {
             </h4>
             <address className="not-italic space-y-2">
               <p className="font-inter text-sm text-[hsl(45_40%_65%)]">
-                📍 Dashashwamedh Ghat, Varanasi
+                📍 Aasighat, Varanasi 221005
               </p>
               <p className="font-inter text-sm text-[hsl(45_40%_65%)]">
-                📞 +91-9999999999
+                📞 +91-9005071425
               </p>
               <p className="font-inter text-sm text-[hsl(45_40%_65%)]">
-                📧 contact@divineaarti.com
+                📧 kashi.gangaarti510@gmail.com
               </p>
             </address>
           </div>
@@ -113,7 +112,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-[hsl(var(--primary)/0.15)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-inter text-xs text-[hsl(45_30%_50%)]">
-            © {new Date().getFullYear()} Divine Aarti. All rights reserved.
+            © {new Date().getFullYear()} Kashi Ganga Aarti Events. All rights reserved.
           </p>
           <p className="font-playfair text-sm italic text-[hsl(var(--primary))] font-medium">
             🕉️ Har Har Mahadev 🙏

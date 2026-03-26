@@ -1,7 +1,7 @@
 export default function WhatsAppFAB() {
   return (
     <a
-      href="https://wa.me/919999999999?text=Namaste! I would like to enquire about Ganga Aarti and ritual services."
+      href="https://wa.me/919005071425?text=Namaste! I would like to enquire about Ganga Aarti and ritual services at Kashi Ganga Aarti Event."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

@@ -33,7 +33,7 @@ export default function AboutSection() {
               Varanasi — one of the world's oldest living cities — stands as the spiritual heart of Hinduism. 
               Its ancient ghats, rising from the sacred Ganges, have witnessed millennia of prayer, ritual, 
               and divine connection. Every evening, as the sun dips below the horizon, the Ganga Aarti transforms 
-              Dashashwamedh Ghat into a sea of flame and devotion.
+              Assi Ghat into a sea of flame and devotion.
             </p>
             <p className="font-inter text-[hsl(var(--muted-foreground))] leading-relaxed mb-5">
               The <strong className="text-foreground">Ganga Aarti</strong> is not merely a ceremony — it is a living prayer. 
@@ -42,7 +42,7 @@ export default function AboutSection() {
               and touches the soul.
             </p>
             <p className="font-inter text-[hsl(var(--muted-foreground))] leading-relaxed mb-8">
-              At <strong className="text-foreground">Divine Aarti</strong>, our mission is to connect sincere devotees 
+              At <strong className="text-foreground">Kashi Ganga Aarti Events</strong>, our mission is to connect sincere devotees 
               worldwide with authentic, verified Pandits who carry these sacred traditions with integrity and reverence — 
               making every ceremony deeply personal and spiritually fulfilling.
             </p>

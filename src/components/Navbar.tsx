@@ -38,11 +38,15 @@ export default function Navbar() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 group"
-          aria-label="Divine Aarti home"
+          aria-label="Kashi Ganga Aarti Event home"
         >
-          <span className="animate-flicker text-2xl">🪔</span>
-          <span className="font-playfair text-xl font-bold text-[hsl(var(--cream))] group-hover:text-[hsl(var(--primary))] transition-colors">
-            Divine Aarti
+          <img 
+            src="/logo.png" 
+            alt="Kashi Ganga Aarti Event Logo" 
+            className="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity"
+          />
+          <span className="font-playfair text-xl font-bold text-[hsl(var(--cream))] group-hover:text-[hsl(var(--primary))] transition-colors hidden sm:inline">
+            Kashi Ganga Aarti
           </span>
         </button>
 
