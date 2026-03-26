@@ -99,17 +99,18 @@ export default function AboutSection() {
               </p>
 
               <a
-                href="/portfolio.pdf"
-                download="Kashi-Ganga-Aarti-Portfolio.pdf"
+                href="https://drive.google.com/file/d/13OKsjhNIEBcN0qms2URQoKqYHLyldy_G/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-inter font-semibold text-white gradient-sunrise glow-saffron hover:scale-105 transition-transform duration-300 shadow-lg"
               >
                 <FileText size={20} />
-                <span>Download Portfolio</span>
+                <span>View Portfolio</span>
                 <Download size={20} />
               </a>
 
               <p className="font-inter text-xs text-[hsl(var(--muted-foreground))] mt-4">
-                PDF • Comprehensive guide to our services and sacred traditions
+                PDF (85 MB) • Comprehensive guide to our services and sacred traditions
               </p>
             </div>
           </div>
