@@ -73,7 +73,7 @@ export default function ServicesSection() {
             >
               {/* Image or Icon */}
               {service.image ? (
-                <div className="w-full h-40 rounded-xl mb-4 overflow-hidden bg-[hsl(var(--muted)/0.5)] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <div className="w-full h-56 rounded-xl mb-4 overflow-hidden bg-[hsl(var(--muted)/0.5)] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={service.image}
                     alt={service.title}

@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
-Sitemap: https://divineaarti.com/sitemap.xml
-Host: https://divineaarti.com
+Disallow: /node_modules/
+
+Sitemap: https://kashigangaartievents.com/sitemap.xml
+Host: https://kashigangaartievents.com
+
+# Google Search Console
+User-agent: Googlebot
+Allow: /
+
+# Bing Webmaster Tools
+User-agent: Bingbot
+Allow: /

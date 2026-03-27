@@ -20,8 +20,8 @@ const Index = () => {
         <title>Book Ganga Aarti | Kashi Ganga Aarti Event — Varanasi</title>
         <meta name="description" content="Book authentic Ganga Aarti ceremonies in Varanasi with verified Pandits. Private & group bookings at Dashashwamedh Ghat." />
         <meta name="keywords" content="Ganga Aarti booking, Varanasi aarti booking, Pandit booking" />
-        <link rel="canonical" href="https://divineaarti.com/" />
-        <meta property="og:title" content="Book Ganga Aarti | Kashi Ganga Aarti Event" />
+        <link rel="canonical" href="https://kashigangaartievents.com/" />
+        <meta property="og:title" content="Book Ganga Aarti | Kashi Ganga Aarti Events" />
         <meta property="og:description" content="Book authentic Ganga Aarti ceremonies in Varanasi with verified Pandits." />
         <meta property="og:image" content="/ganga-aarti.jpeg" />
       </Helmet>
