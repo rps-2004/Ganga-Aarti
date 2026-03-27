@@ -35,23 +35,25 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex items-center gap-2 group"
-          aria-label="Kashi Ganga Aarti Event home"
-        >
-          <img 
-            src="/logo.png" 
-            alt="Kashi Ganga Aarti Event Logo" 
-            className="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity"
-          />
-          <span className="font-playfair text-xl font-bold text-[hsl(var(--cream))] group-hover:text-[hsl(var(--primary))] transition-colors hidden sm:inline">
-            Kashi Ganga Aarti
-          </span>
-        </button>
+        <div className="flex-1 md:flex-none flex justify-center md:justify-start">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center gap-2 group"
+            aria-label="Kashi Ganga Aarti Event home"
+          >
+            <img 
+              src="/logo.png" 
+              alt="Kashi Ganga Aarti Event Logo" 
+              className="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity"
+            />
+            <span className="font-playfair text-xl font-bold text-[hsl(var(--cream))] group-hover:text-[hsl(var(--primary))] transition-colors">
+              Kashi Ganga Aarti
+            </span>
+          </button>
+        </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex md:flex-1 items-center justify-end gap-1">
           {navLinks.map((link) => (
             <li key={link.label}>
               <button
