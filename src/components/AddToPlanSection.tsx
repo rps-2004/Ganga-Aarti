@@ -79,20 +79,20 @@ export default function AddToPlanSection() {
 
             {/* Right: Visual */}
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden border-2 border-[hsl(var(--primary)/0.3)] shadow-warm aspect-square bg-gradient-to-br from-[hsl(25_60%_15%)] to-[hsl(350_40%_15%)]">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                  <div className="text-8xl mb-6">📋</div>
-                  <p className="font-playfair text-2xl font-bold text-white text-center mb-4">
+              <div className="rounded-2xl overflow-hidden border-2 border-[hsl(var(--primary)/0.3)] shadow-warm aspect-square md:aspect-square bg-gradient-to-br from-[hsl(25_60%_15%)] to-[hsl(350_40%_15%)]">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                  <div className="text-6xl sm:text-7xl md:text-8xl mb-3 sm:mb-4 md:mb-6">📋</div>
+                  <p className="font-playfair text-xl sm:text-2xl md:text-2xl font-bold text-white text-center mb-2 sm:mb-3 md:mb-4">
                     Your Spiritual Journey
                   </p>
-                  <p className="font-inter text-center text-[hsl(45_60%_80%)] mb-8">
+                  <p className="font-inter text-xs sm:text-sm md:text-base text-center text-[hsl(45_60%_80%)] mb-4 sm:mb-6 md:mb-8 line-clamp-3">
                     Plan every detail of your Varanasi pilgrimage with our intelligent booking system.
                   </p>
-                  <div className="space-y-3 w-full max-w-xs">
+                  <div className="space-y-2 sm:space-y-3 w-full max-w-xs">
                     {["Select Ceremony", "Choose Date & Time", "Invite Participants", "Confirm Booking"].map((step, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <CheckCircle size={20} className="text-[hsl(var(--primary))]" />
-                        <span className="font-inter text-sm text-white">{step}</span>
+                      <div key={i} className="flex items-center gap-2 sm:gap-3">
+                        <CheckCircle size={16} className="sm:w-5 sm:h-5 md:w-5 md:h-5 text-[hsl(var(--primary))] flex-shrink-0" />
+                        <span className="font-inter text-xs sm:text-sm text-white truncate">{step}</span>
                       </div>
                     ))}
                   </div>

@@ -110,74 +110,79 @@ export default function BookingSection() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
+                <label htmlFor="name" className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
                   Full Name
                 </label>
                 <input
+                  id="name"
                   name="name"
                   type="text"
                   required
                   placeholder="Your full name"
                   value={form.name}
                   onChange={handleChange}
+                  autoComplete="name"
                   className={inputClass}
                 />
               </div>
               <div>
-                <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
+                <label htmlFor="phone" className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
                   Phone Number
                 </label>
                 <input
+                  id="phone"
                   name="phone"
                   type="tel"
                   required
                   placeholder="+91 XXXXX XXXXX"
                   value={form.phone}
                   onChange={handleChange}
+                  autoComplete="tel"
                   className={inputClass}
                 />
               </div>
             </div>
 
             <div>
-              <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
+              <label htmlFor="email" className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
                 Email Address
               </label>
               <input
+                id="email"
                 name="email"
                 type="email"
                 required
                 placeholder="your@email.com"
                 value={form.email}
                 onChange={handleChange}
-                className={inputClass}
+                autoComplete="email"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-3">
+              <legend className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-3">
                 Select Rituals (You can choose multiple)
-              </label>
-              <div className="space-y-2.5">
+              </legend>
+              <fieldset className="space-y-2.5" role="group">
                 {rituals.map((ritual) => (
                   <div key={ritual} className="flex items-center">
                     <input
                       type="checkbox"
-                      id={ritual}
+                      id={`ritual-${ritual}`}
                       checked={form.rituals.includes(ritual)}
                       onChange={() => handleRitualToggle(ritual)}
                       className="w-4 h-4 rounded border-[hsl(var(--primary)/0.3)] bg-[hsl(var(--background))] cursor-pointer accent-[hsl(var(--primary))]"
                     />
                     <label
-                      htmlFor={ritual}
+                      htmlFor={`ritual-${ritual}`}
                       className="ml-3 font-inter text-sm text-foreground cursor-pointer hover:text-[hsl(var(--primary))] transition-colors"
                     >
                       {ritual}
                     </label>
                   </div>
                 ))}
-              </div>
+              </fieldset>
             </div>
 
               <div>
@@ -213,15 +218,17 @@ export default function BookingSection() {
             </div>
 
             <div>
-              <label className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
+              <label htmlFor="message" className="block font-inter text-xs font-semibold text-foreground uppercase tracking-wider mb-1.5">
                 Message / Special Requests
               </label>
               <textarea
+                id="message"
                 name="message"
                 rows={4}
                 placeholder="Any specific requirements, occasion details, number of attendees…"
                 value={form.message}
                 onChange={handleChange}
+                autoComplete="off"
                 className={cn(inputClass, "resize-none")}
               />
             </div>
