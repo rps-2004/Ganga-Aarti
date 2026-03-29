@@ -92,18 +92,18 @@ export default function HeroSection() {
       {/* Navigation buttons */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all duration-300 hover:scale-110"
+        className="absolute left-2 sm:left-8 top-1/2 transform -translate-y-1/2 z-20 p-1.5 sm:p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all duration-300 hover:scale-110"
         aria-label="Previous photo"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={16} className="sm:w-6 sm:h-6" />
       </button>
       
       <button
         onClick={goToNext}
-        className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all duration-300 hover:scale-110"
+        className="absolute right-2 sm:right-8 top-1/2 transform -translate-y-1/2 z-20 p-1.5 sm:p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all duration-300 hover:scale-110"
         aria-label="Next photo"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={16} className="sm:w-6 sm:h-6" />
       </button>
       
       {/* Photo indicators */}
