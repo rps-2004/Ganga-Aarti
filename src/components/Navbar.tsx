@@ -47,7 +47,7 @@ export default function Navbar() {
               className="h-10 w-auto object-contain group-hover:opacity-80 transition-opacity"
             />
             <span className="font-playfair text-xl font-bold text-[hsl(var(--cream))] group-hover:text-[hsl(var(--primary))] transition-colors">
-              Kashi Ganga Aarti
+              Kashi Ganga Aarti Events
             </span>
           </button>
         </div>
