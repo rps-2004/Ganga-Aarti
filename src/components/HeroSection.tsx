@@ -127,7 +127,7 @@ export default function HeroSection() {
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full flex flex-col items-center">
         {/* Sanskrit Shlok — positioned at top after navbar */}
         <p
-          className="font-playfair text-lg sm:text-xl md:text-2xl font-bold italic mb-4 text-[hsl(45_90%_90%)] animate-fade-in-up leading-relaxed"
+          className="font-playfair text-lg sm:text-xl md:text-2xl font-bold italic text-[hsl(45_90%_90%)] animate-fade-in-up leading-relaxed"
           style={{ animationDelay: "0.05s", lineHeight: "1.8" }}
         >
           "देवि! सुरेश्वरि! भगवति! गंगे!<br className="block mb-3" />
