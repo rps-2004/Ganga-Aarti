@@ -97,7 +97,7 @@ export default function Footer() {
             </h4>
             <address className="not-italic space-y-2">
               <p className="font-inter text-sm text-[hsl(45_40%_65%)]">
-                📍 Aasighat, Varanasi 221005
+                📍 Assighat, Varanasi 221005
               </p>
               <p className="font-inter text-sm text-[hsl(45_40%_65%)]">
                 📞 +91-9005071425

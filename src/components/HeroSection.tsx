@@ -1,17 +1,29 @@
-const PARTICLES = [
-  { top: "15%", left: "8%", delay: "0s", size: "text-2xl" },
-  { top: "25%", left: "92%", delay: "0.8s", size: "text-xl" },
-  { top: "70%", left: "5%", delay: "1.5s", size: "text-3xl" },
-  { top: "80%", left: "90%", delay: "0.3s", size: "text-2xl" },
-  { top: "40%", left: "3%", delay: "2s", size: "text-lg" },
-  { top: "55%", left: "95%", delay: "1.2s", size: "text-xl" },
-  { top: "10%", left: "50%", delay: "0.6s", size: "text-2xl" },
-  { top: "88%", left: "45%", delay: "1.8s", size: "text-lg" },
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const PHOTO_ANIMATIONS = [
+  { image: "/ganga_1.jpeg", startDelay: "0s" },
+  { image: "/ganga_2.jpeg", startDelay: "6s" },
+  { image: "/ganga_3.jpeg", startDelay: "12s" },
+  { image: "/ganga_4.jpeg", startDelay: "18s" },
 ];
 
 export default function HeroSection() {
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+
   const handleScroll = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const goToPrevious = () => {
+    setCurrentPhotoIndex((prev) => (prev === 0 ? PHOTO_ANIMATIONS.length - 1 : prev - 1));
+    setAutoPlay(false);
+  };
+
+  const goToNext = () => {
+    setCurrentPhotoIndex((prev) => (prev === PHOTO_ANIMATIONS.length - 1 ? 0 : prev + 1));
+    setAutoPlay(false);
   };
 
   return (
@@ -43,23 +55,73 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-tr from-[hsl(25_60%_20%/0.5)] via-transparent to-[hsl(350_50%_20%/0.4)]" />
       </div>
 
-      {/* Floating diya particles */}
-      {PARTICLES.map((p, i) => (
-        <span
-          key={i}
-          className="absolute pointer-events-none select-none animate-float"
-          style={{
-            top: p.top,
-            left: p.left,
-            animationDelay: p.delay,
-            animationDuration: `${3.5 + i * 0.4}s`,
-            fontSize: p.size === "text-3xl" ? "1.875rem" : p.size === "text-2xl" ? "1.5rem" : p.size === "text-xl" ? "1.25rem" : "1.125rem",
-          }}
-          aria-hidden="true"
-        >
-          🪔
-        </span>
-      ))}
+      {/* Full-area photo carousel with manual controls */}
+      <style>{`
+        @keyframes photoFadeInOut {
+          0% {
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          85% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      `}</style>
+      
+      {/* Single photo display */}
+      <div
+        className="absolute inset-0 pointer-events-none transition-all duration-700"
+        style={{
+          backgroundImage: `url('${PHOTO_ANIMATIONS[currentPhotoIndex].image}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "blur(2px) brightness(0.6)",
+        }}
+        aria-hidden="true"
+      />
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden="true" />
+      
+      {/* Navigation buttons */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all duration-300 hover:scale-110"
+        aria-label="Previous photo"
+      >
+        <ChevronLeft size={24} />
+      </button>
+      
+      <button
+        onClick={goToNext}
+        className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 hover:bg-white/40 text-white transition-all duration-300 hover:scale-110"
+        aria-label="Next photo"
+      >
+        <ChevronRight size={24} />
+      </button>
+      
+      {/* Photo indicators */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+        {PHOTO_ANIMATIONS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              setCurrentPhotoIndex(i);
+              setAutoPlay(false);
+            }}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === currentPhotoIndex ? "bg-white w-8" : "bg-white/50 hover:bg-white/80"
+            }`}
+            aria-label={`Go to photo ${i + 1}`}
+          />
+        ))}
+      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full flex flex-col items-center">

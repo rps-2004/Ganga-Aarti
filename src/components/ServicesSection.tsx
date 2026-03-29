@@ -11,9 +11,9 @@ const services = [
   {
     icon: "💍",
     image: "/wedding.jpeg",
-    title: "Wedding Aarti",
+    title: "Wedding Ganga Aarti",
     subtitle: "Vedic Marriage Blessings",
-    description: "Complete Vedic wedding ceremonies including Saptapadi, Kanyadaan, and all sacred Hindu marriage rites with divine blessings.",
+    description: "Witness love blessed by the sacred flames of devotion — a wedding Ganga Aarti where two souls unite under divine grace and timeless tradition.",
   },
   {
     icon: "🔱",
@@ -42,6 +42,20 @@ const services = [
     title: "Ritual Consultation",
     subtitle: "Personalized Guidance",
     description: "One-on-one consultation with experienced Pandits for personalized puja recommendations and spiritual guidance.",
+  },
+  {
+    icon: "🎭",
+    image: "/cultural_program.jpeg",
+    title: "Cultural Programs",
+    subtitle: "Soul of Varanasi",
+    description: "Bring home the soul of Varanasi with a mesmerizing Ganga Aarti, performed live as part of our cultural experiences.",
+  },
+  {
+    icon: "🗺️",
+    image: "/tour_plan.jpeg",
+    title: "Tour Plan",
+    subtitle: "Divine Journey",
+    description: "Immerse yourself in the divine aura of Varanasi with a thoughtfully curated tour that blends spirituality, culture, and serenity. From sacred temples to timeless ghats, experience Banaras in its truest essence.",
   },
 ];
 
