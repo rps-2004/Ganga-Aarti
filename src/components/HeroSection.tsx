@@ -88,10 +88,10 @@ export default function HeroSection() {
           className="font-playfair text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6 text-white animate-fade-in-up"
           style={{ animationDelay: "0.25s" }}
         >
-          Experience{" "}
-          <span className="gradient-text">Divine</span>
+          Book Authentic{" "}
+          <span className="gradient-text">Ganga Aarti</span>
           <br />
-          Ganga Aarti
+          with Verified Pandits
           <br />
           <span className="italic font-normal text-4xl sm:text-5xl md:text-6xl text-[hsl(45_90%_90%)]">
             in Varanasi
@@ -102,8 +102,7 @@ export default function HeroSection() {
           className="font-inter text-lg sm:text-xl text-[hsl(45_60%_85%)] mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
-          Connect with trusted Pandits for authentic rituals and sacred
-          ceremonies on the banks of the holy Ganges.
+          Private & group Ganga Aarti bookings at Dashashwamedh Ghat. Rudrabhishek, Satyanarayan Katha, Wedding Rituals. Connect with 50+ verified Pandits for authentic ceremonies.
         </p>
 
         <div
