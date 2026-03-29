@@ -107,7 +107,7 @@ export default function HeroSection() {
       </button>
       
       {/* Photo indicators */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
         {PHOTO_ANIMATIONS.map((_, i) => (
           <button
             key={i}
@@ -150,25 +150,15 @@ export default function HeroSection() {
           className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 text-white animate-fade-in-up"
           style={{ animationDelay: "0.25s" }}
         >
-          Book Authentic{" "}
+          Sacred {" "}
           <span className="gradient-text">Ganga Aarti</span>
           <br />
-          with Verified Pandits
+          , Verified Pandits
           <br />
-          <span className="italic font-normal text-4xl sm:text-5xl md:text-6xl text-[hsl(45_90%_90%)]">
-            in Varanasi
-          </span>
         </h1>
 
-        <p
-          className="font-inter text-lg sm:text-xl text-[hsl(45_60%_85%)] mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Private & group Ganga Aarti bookings at Dashashwamedh Ghat. Rudrabhishek, Satyanarayan Katha, Wedding Rituals. Connect with 50+ verified Pandits for authentic ceremonies.
-        </p>
-
         <div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up mt-8"
           style={{ animationDelay: "0.55s" }}
         >
           <button
@@ -178,13 +168,6 @@ export default function HeroSection() {
             🪔 Book Ganga Aarti
           </button>
         </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="mt-16 animate-bounce opacity-60">
-          <div className="w-6 h-10 border-2 border-[hsl(45_80%_75%/0.5)] rounded-full mx-auto flex items-start justify-center pt-2">
-            <div className="w-1 h-2.5 bg-[hsl(var(--primary))] rounded-full" />
-          </div>
         </div>
       </div>
     </section>
