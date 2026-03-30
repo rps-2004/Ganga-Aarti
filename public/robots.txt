@@ -2,8 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /node_modules/
 
-Sitemap: https://kashigangaartievents.com/sitemap.xml
-Host: https://kashigangaartievents.com
+Sitemap: https://www.kashigangaartievents.com/sitemap.xml
+Host: https://www.kashigangaartievents.com/
 
 # Google Search Console
 User-agent: Googlebot
