@@ -153,7 +153,7 @@ export default function HeroSection() {
           Sacred {" "}
           <span className="gradient-text">Ganga Aarti</span>
           <br />
-          , Verified Pandits
+          Verified Pandits
           <br />
         </h1>
 
