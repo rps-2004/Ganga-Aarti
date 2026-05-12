@@ -8,8 +8,8 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Helmet } from "react-helmet-async";
 
 const rituals = [
-  "Ganga Aarti (Private)",
-  "Ganga Aarti (Group)",
+  "Wedding Ganga Arti Event",
+  "Ganga Aarti Cultural Events",
   "Rudrabhishek",
   "Satyanarayan Katha",
   "Wedding Rituals",
